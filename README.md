@@ -16,7 +16,7 @@
 
 - [x] [1. How to Write a Simple Makefile](01-how-to-write-a-simple-makefile) - 3
 
-- [ ] 2. Rules - 10
+- [x] [2. Rules](02-rules) - 10
 
 - [ ] 3. Variables and Macros - 41
 
