@@ -21,6 +21,7 @@ hello: hello.c
 
 ```sh
 $ make
+gcc hello.c -o hello
 ```
 
 - This will cause the `make` program to read the *makefile* and build the first target it finds there.
@@ -93,6 +94,14 @@ foo.o: foo.c foo.h
 
 > [Makefile](Makefile)
 
+```sh
+$ make
+gcc -c count_words.c
+flex -t lexer.l > lexer.c
+gcc -c lexer.c
+gcc count_words.o lexer.o -lfl -o count_words
+```
+
 - The order in which commands are executed by `make` are nearly the opposite to the order they occur in the *makefile*.
 
 - This *top-down* style is common in *makefiles*.
@@ -103,7 +112,7 @@ foo.o: foo.c foo.h
 
 - We will discuss these in great detail in later chapters.
 
-### Dependency Checking
+## Dependency Checking
 
 - The `-l` option to `gcc` indicates a system library that must be linked into the application.
 
@@ -115,7 +124,9 @@ foo.o: foo.c foo.h
 
 - Here `make` finds */usr/lib/libfl.a*.
 
-### Minimizing Rebuilds
+    - In my environment, `make` finds */lib/libfl.so*.
+
+## Minimizing Rebuilds
 
 - The problem is that we have forgotten some rules in our lexical analyzer and `flex` is passing this unrecognized text to its output.
 
@@ -128,9 +139,16 @@ foo.o: foo.c foo.h
 
 - After editing this file we need to rebuild the application to test our fix.
 
+```sh
+$ make
+flex -t lexer.l > lexer.c
+gcc -c lexer.c
+gcc count_words.o lexer.o -lfl -o count_words
+```
+
 - Notice this time the file *count_words.c* was not recompiled.
 
-### Invoking make
+## Invoking make
 
 - The previous examples assumes that:
 
@@ -144,7 +162,7 @@ foo.o: foo.c foo.h
 
 - It is also possible to set almost any *makefile* variable on the command line to override the default value or the value set in the *makefile*.
 
-### Basic Makefile Syntax
+## Basic Makefile Syntax
 
 - *Makefile* are usually structured top-down so that the most general target, often called `all`, is updated by default.
 

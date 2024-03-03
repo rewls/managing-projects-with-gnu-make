@@ -14,7 +14,7 @@
 
 ### Part 1. Basic Concepts
 
-- [ ] 1. How to Write a Simple Makefile - 3
+- [x] [1. How to Write a Simple Makefile](01-how-to-write-a-simple-makefile) - 3
 
 - [ ] 2. Rules - 10
 
@@ -26,7 +26,7 @@
 
 ### Part 2. Advanced and Specialized Topics
 
-- [ ] 6. Managing Large Projects
+- [ ] 6. Managing Large Projects - 107
 
 - [ ] 7. Portable Makefiles - 129
 
@@ -38,7 +38,7 @@
 
 - [ ] 11. Example Makefiles - 196
 
-- [ ] 12. Debugging Makefiles
+- [ ] 12. Debugging Makefiles - 229
 
 ### Part 3. Appendixes
 
@@ -49,3 +49,7 @@
 - C. GNU Free Documentation License -- GNU Project -- Free Software Foundation (FSF) - 263
 
 - Index - 271
+
+## Environment
+
+- Operating System: Arch Linux 2024.*
